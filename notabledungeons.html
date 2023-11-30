@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+jpg" href="Assets/Images/Logo_Website.png" alt="Logo pisica">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>ROTMG</title>
+</head>
+<script src="DPS.js" defer></script>
+
+<body>
+    <div class="menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><a class="menu__item" href="index.html">
+                            <img src="Assets/Images/Logo_Website.png" alt="">
+                            <h1>ROTMG</h1>
+                        </a></li>
+                    <li><a class="menu__item" href="history.html">History</a></li>
+                    <li><a class="menu__item" href="general.html">General rules</a></li>
+                    <li><a class="menu__item" href="notabledungeons.html" style="color: orange;">Notable dungeons</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="dungeons">
+        <h2>Pirate cave</h2>
+        <div class="dungeon">
+            <img src="Assets/Images/pcave1.png" alt="">
+            <img src="Assets/Images/pcave2.png" alt="">
+            <img src="Assets/Images/pcave3.png" alt="">
+            <img src="Assets/Images/pcave4.png" alt="">
+            <img src="Assets/Images/pcave5.jpg" alt="">
+        </div>
+        <h2>Snake pit</h2>
+        <div class="dungeon">
+            <img src="Assets/Images/pit1.png" alt="">
+            <img src="Assets/Images/pit2.png" alt="">
+            <img src="Assets/Images/pit3.png" alt="">
+            <img src="Assets/Images/pit4.png" alt="">
+        </div>
+        <h2>Deadwater docks</h2>
+        <div class="dungeon">
+            <img src="Assets/Images/dwd1.png" alt="">
+            <img src="Assets/Images/dwd2.png" alt="">
+            <img src="Assets/Images/dwd3.png" alt="">
+            <img src="Assets/Images/dwd4.png" alt="">
+            <img src="Assets/Images/dwd5.png" alt="">
+        </div>
+        <h2>High Tech Terror</h2>
+        <div class="dungeon">
+            <img src="Assets/Images/tech1.png" alt="">
+            <img src="Assets/Images/tech2.png" alt="">
+            <img src="Assets/Images/tech3.png" alt="">
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <form>
+        <h2>DPS CALCULATOR</h2>
+        <div class="DPS">
+            <div class="DPSinfo">
+                <div class="DMG1">
+                    <label for="DMG1">DMG1:</label>
+                    <input type="number" id="DMG1" name="DMG1" placeholder="Damage1" />
+                </div>
+                <div class="DMG2">
+                    <label for="DMG2">DMG2:</label>
+                    <input type="number" id="DMG2" name="DMG2" placeholder="Damage2" />
+                </div>
+                <div class="ATT">
+                    <label for="ATT">ATT:</label>
+                    <input type="number" id="ATT" name="ATT" placeholder="Attack" />
+                </div>
+                <div class="DEX">
+                    <label for="DEX">DEX:</label>
+                    <input type="number" id="DEX" name="DEX" placeholder="Dexterity" />
+                </div>
+                <div class="FR">
+                    <label for="FR">FR(%):</label>
+                    <input type="number" id="FR" name="FR" placeholder="Fire rate" />
+                </div>
+            </div>
+            <div class="Calculate">
+                <input type="button" value="Calculate" onclick="calculateDPS()" />
+                <label for="Damage"></label>
+                <input type="number" id="Damage" name="Damage" placeholder="damage/sec" readonly />
+            </div>
+        </div>
+    </form>
+    <br><br><br><br><br>
+</body>

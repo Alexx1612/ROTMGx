@@ -1,0 +1,460 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    background-image: linear-gradient(rgba(69, 0, 69, 0.9), rgba(25, 0, 50, 0.7));
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: clamp(0.25rem, 0.25rem + 2vw, 1.25rem);
+}
+
+
+
+.navigation {
+    position: fixed;
+    top: -35px;
+    width: 100%;
+    height: 15dvh;
+    margin: 0;
+    list-style: none;
+}
+
+.menu {
+    top: -40px;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 100dvw;
+    height: 14dvh;
+    background: rgb(80, 80, 80);
+    font-size: clamp(.5rem, .5rem + 1vw, 1.3rem);
+    z-index: 1;
+}
+
+.navigation img {
+    width: 40px;
+    height: 40px;
+}
+
+.navigation nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation nav ul li {
+    padding: 0 1vw 0 1vw;
+    display: grid;
+    align-items: center;
+    list-style: none;
+}
+
+.navigation nav ul li :hover {
+    text-decoration: underline;
+}
+
+.navigation nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.intro {
+    margin-top: 20dvh;
+    display: flex;
+}
+
+.intro img {
+    padding: 0.5rem;
+    width: 350px;
+    height: 300px;
+}
+
+.task {
+    border: solid 2px whitesmoke;
+    border-radius: 25px;
+    margin: 0.5rem;
+    background-color: rgba(25, 0, 50, 0.3);
+    color: wheat;
+    text-align: center;
+}
+
+.timeline {
+    width: 50dvw;
+    margin-left: 25dvw;
+    margin-right: 25dvw;
+    color: aliceblue;
+}
+
+.timeline ol li img {
+    width: 45dvw;
+    height: 45dvh;
+}
+
+.timeline ol {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    --hue: 1;
+    --unit: 1rem;
+}
+
+.timeline h2 {
+    text-align: center;
+    color: wheat;
+}
+
+.timeline p {
+    line-height: 1.3;
+
+}
+
+.event-date {
+    margin: 0 0 0.25rem;
+}
+
+.event-description {
+    margin: 1rem;
+}
+
+.timeline ol li {
+    --height: 7rem;
+    position: relative;
+    display: block;
+    background-color: rgb(50, 60, 70);
+    border-color: rgb(50, 60, 70);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+/*trunchiul sagetii*/
+li::before {
+    content: "";
+    background-color: inherit;
+    position: absolute;
+    display: block;
+    width: var(--unit);
+    height: var(--unit);
+    top: 100%;
+    left: calc(50% - (var(--unit)/2));
+}
+
+/*varful sagetii*/
+li::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: calc(100% + var(--unit));
+    left: calc(50% - (var(--unit)));
+    border: var(--unit) solid transparent;
+    border-top-color: inherit;
+}
+
+/*fara ultima sageata*/
+li:last-child::before,
+li:last-child::after {
+    content: none;
+}
+
+
+.classes {
+    margin-top: 15dvh;
+    color: aliceblue;
+}
+
+.class {
+    background-color: rgba(25, 0, 50, 0.3);
+    padding: 5dvw;
+    margin: 5dvw;
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid cyan;
+}
+
+.class figure img {
+    margin: 5dvw;
+    width: 10dvw;
+    height: 10dvw;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.class:hover img {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+
+:root {
+    --magnifier: 6;
+    --gap: 1vmin;
+    --transition: 0.5s;
+}
+
+.dungeons {
+    padding-top: 10dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: wheat;
+}
+
+.dungeon {
+    width: 80vw;
+    height: 50vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.dungeon img {
+    --brightness: 0.75;
+    --grayscale: 1;
+    transition: flex var(--transition), filter var(--transition);
+    height: 100%;
+    filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+    object-fit: cover;
+    overflow: hidden;
+    flex: 1;
+}
+
+.dungeon img:hover {
+    --brightness: 1.15;
+    --grayscale: 0;
+    flex: var(--magnifier);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.DPS {
+    margin: 1.5vw;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    background-color: rgba(200, 100, 0, 0.75);
+    height: 35h;
+    width: 60dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DPSinfo {
+    padding-top: 5dvh;
+    display: flex;
+    padding-bottom: 50px;
+    align-content: center;
+    text-align: center;
+}
+
+.Calculate {
+    padding-bottom: 5dvh;
+}
+
+input[type="number"] {
+    width: 8vw;
+    height: 5vh;
+    padding: 10px;
+    margin: 0.2rem;
+    border: 2px solid rgb(100, 100, 100);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="button"] {
+    background-color: #02ae05;
+    width: 12vw;
+    height: 5vh;
+    color: rgb(50, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 500px) {
+    #menu__toggle {
+        opacity: 0;
+    }
+
+    #menu__toggle:checked+.menu__btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked+.menu__btn>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    #menu__toggle:checked+.menu__btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked~.navigation {
+        left: 0 !important;
+    }
+
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+    }
+
+    .menu__btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu__btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .navigation {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: grey;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+    }
+
+    .menu {
+        top: -40px;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        width: 100dvw;
+        height: 14dvh;
+        background: none;
+        font-size: clamp(.5rem, .5rem + 1vw, 1.3rem);
+        z-index: 1;
+    }
+
+    .navigation img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navigation nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation nav ul li {
+        padding: 0 1vw 0 1vw;
+        display: grid;
+        align-items: center;
+        list-style: none;
+    }
+
+    .navigation nav ul li :hover {
+        text-decoration: underline;
+    }
+
+    .navigation nav ul li a {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-size: 20px;
+        font-weight: 600;
+        transition-duration: .25s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .intro {
+        margin-top: 20dvh;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 35dvh;
+
+    }
+
+    .timeline {
+        margin-left: 15dvw;
+        margin-right: 15dvw;
+        width: 70dvw;
+        color: aliceblue;
+        font-size: 10px;
+        padding-bottom: 35dvh;
+    }
+
+    .timeline ol li img {
+        width: 62.5dvw;
+        height: 25dvh;
+    }
+
+    .class {
+        align-items: center;
+    }
+
+    .class figure img {
+        margin: 5dvw;
+        width: 20dvw;
+        height: 20dvw;
+    }
+
+    .class_info p {
+        font-size: 8px;
+    }
+
+    .classes {
+        padding-bottom: 35dvh;
+    }
+
+    .DPS {
+        margin-bottom: 40dvh;
+    }
+
+    .DPSinfo {
+        flex-direction: column;
+    }
+
+    input[type="number"] {
+        width: 15vw;
+        height: 3vh;
+        padding: 2px;
+        margin: 0rem;
+    }
+
+    input[type="button"] {
+        width: 20vw;
+        height: 3vh;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+}
